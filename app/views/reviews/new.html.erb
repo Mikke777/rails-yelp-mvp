@@ -1,0 +1,11 @@
+<div style="background-color: white;" class="container rounded">
+  <h1> Create a new Review for:<%= @restaurant.name %> </h1>
+
+  <%= simple_form_for [@restaurant, @review] do |f| %>
+    <%= f.input :content %>
+    <%= f.input :rating, collection: 0..5 %>
+    <%= f.submit "Submit review", class: "btn btn-primary" %>
+  <% end %>
+
+  <%= link_to "Come back to to the main info of:#{@restaurant.name}", restaurant_path(@restaurant) %>
+</div>

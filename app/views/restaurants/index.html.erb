@@ -1,0 +1,14 @@
+<div style="background-color: white;" class="container rounded">
+  <h1>All Restaurants</h1>
+  <div class="rounded border border-dark mx-5">
+    <% @restaurants.each do |restaurant| %>
+      <h2 class="font-weight-bold text-center">
+      <%= link_to "#{restaurant.name}", restaurant_path(restaurant) %>
+      </h2>
+      <p class="font-weight-bold text-center"><%= restaurant.address %></p>
+      <p class="font-weight-bold text-center"><%= restaurant.phone_number %></p>
+      <p class="font-weight-bold text-center"><%= restaurant.category %></p>
+    <% end %>
+  </div>
+<%= link_to "Create a new restaurant", new_restaurant_path %>
+</div>
